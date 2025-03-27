@@ -1,1 +1,9 @@
 .ds_store
+node_modules
+target
+.yarn/cache
+.pnp.*
+node_modules
+*wallet.json
+.ds_store
+*lock

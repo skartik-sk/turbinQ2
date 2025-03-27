@@ -13,15 +13,15 @@ const provider = new AnchorProvider(connection, new Wallet(keypair), {
 
     const program : Program = new Program(IDL, provider);
 
-    const enrollment_seeds = [Buffer.from("pre"),
+    const enrollment_seeds = [Buffer.from("prereq"),
 keypair.publicKey.toBuffer()];
 const [enrollment_key, _bump] =
 PublicKey.findProgramAddressSync(enrollment_seeds, program.programId);
 
 (async () => {
     try {
-    const txhash = await program.methods
-.submit(github)
+    const txhash = await program.methods.complete
+    (github)
     .accounts({
     signer: keypair.publicKey,
     })
